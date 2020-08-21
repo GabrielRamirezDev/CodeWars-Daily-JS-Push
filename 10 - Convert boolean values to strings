@@ -1,0 +1,6 @@
+//Complete the method that takes a boolean value and return a
+
+
+function boolToWord( bool ){
+  return (bool === true) ? 'Yes' : 'No'
+};
