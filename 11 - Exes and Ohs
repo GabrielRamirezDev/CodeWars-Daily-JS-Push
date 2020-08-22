@@ -1,0 +1,22 @@
+//Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+
+function XO(str) {
+  let lower = str.toLowerCase()
+  let xCounter = 0;
+  let oCounter = 0;
+    for( let i = 0; i< lower.length; i++){
+      if(lower[i]!== 'x' && lower[i] !=='o'){
+        continue;
+      }else if(lower[i]==='o'){
+        oCounter++;
+      }else if(lower[i]==='x'){
+        xCounter++;
+    }
+  }
+  if(xCounter!==oCounter){
+    return false;
+  }else{
+    return true;
+  }
+};
