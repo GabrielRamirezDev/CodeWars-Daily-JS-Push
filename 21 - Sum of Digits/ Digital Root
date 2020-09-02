@@ -1,0 +1,14 @@
+//Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers
+
+function digital_root(n){
+  let num = 0;
+  n.toString().split('').map(x => {
+    num += parseInt(x,10);
+    console.log(num)
+  });
+  if(num > 9){
+    return digital_root(num)
+  }else{
+    return num
+  }
+}
