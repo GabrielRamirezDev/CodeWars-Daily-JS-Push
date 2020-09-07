@@ -1,0 +1,22 @@
+//Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+function pigIt(str){
+  let ending = "ay";
+  let word = str.split(' ');
+  let thing = []
+  let thing2 = []
+  let check = /[A-Z]/ig;
+  for(let i = 0; i < word.length; i++ ){
+    if(word[i].match(check)){
+      thing.push(word[i] + word[i][0]+ending)
+    }else{
+      thing.push(word[i] + word[i][0])
+    }
+  }
+
+  for(let j = 0; j < thing.length; j++){
+    thing2.push(thing[j].replace(thing[j][0], ''))
+  }
+  return thing2.join(' ')
+
+}
