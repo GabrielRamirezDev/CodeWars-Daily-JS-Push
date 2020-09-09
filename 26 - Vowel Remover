@@ -1,0 +1,13 @@
+//Create a function called shortcut to remove all the lowercase vowels in a given string.
+
+function shortcut(string){
+  let a = string.split('');
+  let array = ['a','e','i','o','u'];
+  console.log(a);
+  for(let i = 0; i< a.length; i++){
+    if(a[i] === a[i].toLowerCase() && array.includes(a[i])){
+      delete a[i]
+    }
+  }
+ return a.join('')
+}
