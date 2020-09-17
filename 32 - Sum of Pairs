@@ -1,0 +1,18 @@
+Given a list of integers and a single sum value, return the first two values (parse from the left please) in order of appearance that add up to form the sum.
+
+var sum_pairs=function(ints, s){
+ let numSet = new Set()
+
+  numSet.add(ints[0]);
+  if (ints.length < 2){
+   return null;
+  }
+
+  for (let i=1; i < ints.length; ++i){
+    let other = s-ints[i];
+    if (numSet.has(other)){
+      return [other,ints[i]];
+    }
+    numSet.add(ints[i]);
+  }
+}
