@@ -1,0 +1,18 @@
+//In this kata you have to correctly return who is the "survivor", ie: the last element of a Josephus permutation.
+//Basically you have to assume that n people are put into a circle and that they are eliminated in steps of k elements, like this:
+
+function josephusSurvivor(n,k){
+
+ let survivor = [], duckDuckGoose = 0;
+  for(var i = 1; i < n+1; i++){
+    survivor.push(i);
+  }
+  while(survivor.length>1){
+    duckDuckGoose += k-1;
+    while(duckDuckGoose > survivor.length-1){
+      duckDuckGoose -= survivor.length;
+    }
+    survivor.splice(duckDuckGoose,1);
+  }
+  return survivor[0]
+}
