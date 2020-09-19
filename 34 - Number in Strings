@@ -1,0 +1,22 @@
+//In this Kata, you will be given a string that has lowercase letters and numbers. Your task is to compare the number groupings and return the largest number.
+For example, solve("gh12cdy695m1") = 695, because this is the largest of all number groupings.
+
+function solve(s){
+  array = [];
+  let num = '';
+
+  for (let i = 0; i < s.length; i++) {
+    if (!isNaN(s[i]) && isNaN(s[i+1])) {
+      num += s[i];
+      array.push(parseInt(num));
+      num = "";
+    } else if (!isNaN(s[i])) {
+      num += s[i];
+    }
+  }
+
+  array.sort(function (a,b) {
+    return b - a;
+  });
+  return array[0];
+}
