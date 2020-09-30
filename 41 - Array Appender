@@ -1,0 +1,5 @@
+//Write a function called appendArrays that appends the items from array 2 onto array 1, returning the newly formed array.
+
+function appendArrays (arr1, arr2) {
+  return arr1.concat(arr2)
+}
