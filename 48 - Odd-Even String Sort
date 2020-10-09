@@ -1,0 +1,18 @@
+//Given a string S. You have to return another string such that even-indexed and odd-indexed characters of S are grouped and groups are space-separated (see sample below)
+
+function sortMyString(S) {
+
+  let array = S.split('')
+
+  let evenIndex = "";
+  let oddIndex =  "";
+
+    for(let i = 0; i < array.length; i++){
+      if (i %2===0){
+        evenIndex += array[i]
+      } else if (i %2!==0){
+        oddIndex += array[i]
+      }
+    }
+  return evenIndex + " " + oddIndex
+}
