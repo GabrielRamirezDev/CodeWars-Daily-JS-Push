@@ -1,0 +1,16 @@
+//Given a string, return the expansion of that string.
+//Input will consist of only lowercase letters and numbers (1 to 9) in valid parenthesis. There will be no letters or numbers after the last closing parenthesis.
+
+function solve(str){
+  let result = '';
+  const notParentheses = char => char !== '(' && char !== ')';
+
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    if (notParentheses(str[i]) && !Number(str[i])) {
+      result = str[i] + result;
+    } else if (Number(str[i])) {
+      result = result.padStart(result.length * Number(str[i]), result);
+    }
+  }
+  return result;
+}
