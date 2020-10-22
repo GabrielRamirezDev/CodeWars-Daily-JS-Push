@@ -1,0 +1,12 @@
+//The function parts_sums (or its variants in other languages) will take as parameter a list ls and return a list of the sums of its parts as defined above.
+// Example: ls = [0, 1, 3, 6, 10] The corresponding sums are (put together in a list): [20, 20, 19, 16, 10, 0]
+
+function partsSums(ls) {
+    let sum = ls.reduce((sum, n) => sum + n, 0)
+    res  = [sum]
+    for (let i = 1; i <= ls.length; i++){
+        sum -= ls[i-1]
+        res.push(sum )
+    }
+    return res
+}
