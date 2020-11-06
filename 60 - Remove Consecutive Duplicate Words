@@ -1,0 +1,5 @@
+//Your task is to remove all consecutive duplicate words from string, leaving only first words entries. For example:
+
+const removeConsecutiveDuplicates = s => {
+  return s.split(" ").filter(function(value,index,arr){ return value != arr[index+1];}).join(" ");
+}
