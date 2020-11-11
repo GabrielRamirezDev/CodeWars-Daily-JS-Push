@@ -1,0 +1,11 @@
+//Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+function removeUrlAnchor(url){
+  url = url.split('')
+  for(let i = 0; i < url.length; i++){
+    if(url[i] === '#'){
+      url.splice(url.indexOf('#'), url.length)
+    }
+  }
+  return url.join('')
+}
