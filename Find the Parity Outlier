@@ -1,0 +1,29 @@
+//You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+
+function findOutlier(integers){
+
+  let check = integers.slice(0, 3)
+  let odd = 0;
+  let even = 0;
+  let result;
+
+  for(let i = 0; i < check.length; i++){
+    if(check[i]%2 ===0){
+      even++
+    } else{
+      odd++
+    }
+  }
+  if(even > odd){
+    result = false
+  }
+  if(odd > even){
+    result = true
+  }
+  if(result === true){
+    return integers.find(a => a % 2 ===0)
+  }
+  if(result === false){
+    return integers.find(a => a % 2 !==0)
+  }
+}
